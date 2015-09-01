@@ -243,9 +243,10 @@ class Updater
                 }
             }
         } else {
+            // new translation set as empty
             foreach ($this->scannedCatalogue->getDomains() as $domainCatalogue) {
                 foreach ($domainCatalogue->all() as $message) {
-                    if ($message->isNew(false)){
+                    if ($message->isNew()){
                         $message->setLocaleString('');
                     }
                 }
